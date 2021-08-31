@@ -1,0 +1,13 @@
+# Include system-wide inputrc, which is ignored by default when
+# a user has their own .inputrc file.
+$include /etc/inputrc
+# ignore case when autocompletion is on
+set completion-ignore-case on 
+# max number of matching items before an extra prompt
+set completion-query-items 30 
+set page-completions on
+set print-completions-horizontally off
+# whether to shift or match the text after the cursor
+set skip-completed-text on    
+# number of columns for showing the matches
+set completion-display-width 1

@@ -1,0 +1,32 @@
+"*":
+  autosave:
+    enabled: true
+  "bracket-matcher":
+    autocompleteCharacters: [
+      "()"
+      "[]"
+      "{}"
+      "\"\""
+      "''"
+      "“”"
+      "‘’"
+      "«»"
+      "‹›"
+    ]
+  core:
+    disabledPackages: [
+      "autocomplete-plus"
+      "spell-check"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    zoomFontWhenCtrlScrolling: true
+  "exception-reporting":
+    userId: "8bd247ad-ca99-470c-95a9-b252195f5242"
+  "markdown-pdf": {}
+  welcome:
+    showOnStartup: false

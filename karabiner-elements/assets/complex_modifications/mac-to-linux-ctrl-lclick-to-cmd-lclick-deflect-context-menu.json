@@ -1,0 +1,32 @@
+{
+  "title": "Mac to Linux: Ctrl+LClick to Cmd+LClick - Ctrl+LClick opens a RClick context menu on Mac",
+  "rules": [
+    {
+      "description": "Mac to Linux: Ctrl+LClick to Cmd+LClick - Ctrl+LClick opens a RClick context menu on Mac",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button1",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button1",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

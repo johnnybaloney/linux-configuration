@@ -1,0 +1,27 @@
+{
+  "title": "Mac to Linux: Open Terminal",
+  "rules": [
+    {
+      "description": "Mac to Linux: Open Terminal",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_alt"
+              ]
+            },
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e 'tell app \"Terminal\"' -e 'do script \"tmux\"' -e 'end tell'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
