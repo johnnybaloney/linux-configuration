@@ -66,36 +66,42 @@ alias aws-cloudformation-describe-stacks-names='aws cloudformation describe-stac
 #
 # $ echo $(safename 'aA&*foo bar 123')
 # aafoo-bar-123
-tosafename() {
+_safename() {
   echo "$@" | tr '\n' ' ' | sed -E 's/[^[:alnum:] -]+//g' | tr '[:upper:]' '[:lower:]' | sed -E 's/[[:space:]]+/-/g' | sed -E 's/[-]+/-/g' | sed -E 's/-$//'
 }
-alias safename='tosafename'
+alias safename='_safename'
 
-listContainerImagesByPod() {
+_listContainerImagesByPod() {
   kubectl get pods -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{": "}{range .spec.containers[*]}{.image}{", "}{end}{end}' | sort
 }
-alias kubectl-list-container-images-by-pod='listContainerImagesByPod'
+alias kubectl-list-container-images-by-pod='_listContainerImagesByPod'
 
-exportArtifactoryUserAndPassword() {
+_exportArtifactoryUserAndPassword() {
   local apikey=$(cat /Users/dawidkoprowski/.jfrog/jfrog-cli.conf | jq -r ".artifactory[0].password")
   local user=$(cat /Users/dawidkoprowski/.jfrog/jfrog-cli.conf | jq -r ".artifactory[0].user")
 
   export ARTIFACTORY_USERNAME=$user
   export ARTIFACTORY_APIKEY=$apikey
 }
-alias export-artifactory-creds='exportArtifactoryUserAndPassword'
+alias export-artifactory-creds='_exportArtifactoryUserAndPassword'
 
-mkdirAndChange() {
+_mkdirAndChange() {
   local dir=$1
   [ ! -z $dir ] && mkdir $dir && cd $_
 }
-alias mkcd='mkdirAndChange'
+alias mkcd='_mkdirAndChange'
 
-randomString() {
+_randomString() {
   local numberOfCharacters=$1
   head /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c$numberOfCharacters
 }
-alias random-string='randomString'
+alias random-string='_randomString'
+
+_millisToFormatted() {
+  local millis=$1
+  python -c "from datetime import datetime;print(datetime.fromtimestamp($millis/1000).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])"
+}
+alias millis-to-formatted='_millisToFormatted'
 
 #==================================================================
 
