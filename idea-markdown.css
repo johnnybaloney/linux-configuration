@@ -1,0 +1,138 @@
+/*
+Paste in IntelliJ Idea for parity with Jekyll wiki:
+
+Settings > Languages & Frameworks > Markdown > Custom CSS
+
+Then in:
+
+Editor > Live Templates > Markdown
+
+h -> <span class="h">
+hlp -> <span class="hp">
+hle -> </span>
+*/
+/*
+jekyll: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll#customizing-your-themes-css
+colour picker: https://www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* light yellow */
+.h {
+    background-color: #FFFF99;
+}
+/* kind of purple */
+.hp {
+    background-color: #EFEBF1;
+    padding: 2px;
+    color: #4D245D;
+}
+/* kind of green */
+.hg {
+    background-color: #EBF1F1;
+    padding: 2px;
+    color: #245D5C;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+table {
+    background-color: #f8f9fa;
+}
+table > * > tr > th {
+	background-color: #eaecf0;
+	text-align: center;
+}
+/* image + caption, usage: ![](...)\n*caption text* */
+img + em {
+ 	display: block;
+ 	width: 500px;
+ 	text-align: center;
+ 	background-color: lightgrey;
+}
+/* scale images that have image link ending with #500, use together with the previous one */
+img[src*='#500'] {
+    display: block;
+    float: left;
+    width: 500px;
+}
+/* blue links in inline code */
+a > code {
+    color: blue;
+    text-decoration-color: blue;
+}
+/* styling for tags, usage: <span class="tag">SomeTag</span>*/
+/* https://www.designlabthemes.com/css-tags-how-to-style-post-tags/ */
+.tag {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    margin: 0 16px 8px 0;
+    padding: 0 10px 0 12px;
+    background: #00a6df;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 12px;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+.tag:before {
+    content: "";
+    position: absolute;
+    top:0;
+    left: -12px;
+    width: 0;
+    height: 0;
+    border-color: transparent #00a6df transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+}
+.tag:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    float: left;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+    box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+}
+/* frames for runtime complexity values */
+td.complexity-orange {
+    color: black;
+    background-color: rgba(255,90,0,.25);
+}
+td.complexity-red {
+    color: black;
+    background-color: rgba(255,0,0,.35);
+}
+td.complexity-yellow-green {
+    color: black;
+    background-color: rgba(0,190,0,.25);
+}
+td.complexity-yellow {
+    color: black;
+    background-color: rgba(255,255,0,.09);
+}
+td.complexity-green {
+    color: black;
+    background-color: rgba(0,190,0,.50);
+}
+td.complexity-gray {
+    color: black;
+    background-color: #e3e3e3;
+}
